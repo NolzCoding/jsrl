@@ -3,13 +3,47 @@
     <head>
         <script src="../jsrl/simplifed.js"></script>
         <script>
+            var x = 50;
+            var y = 250;
+            var speedy = 0;
+            var gravity = 1;
+
+            var toprow = [];
+
+            var speed = 5;
+            createrects();
+            function update() {
+                clear();
+
+                if (key.space) {   
+                    speedy = -10;
+                }
+
+                speedy += gravity;
+
+                y += speedy;
+                
+                rect(x, y, 15, 15, "blue");
+                console.log(toprow);
+                toprow.forEach(function (value) {
+                    value.x -= speed;
+                    rect(value.x,value.y, value.w, value.h, "green");
+                    
+                });
+
+            } 
+
             
 
-            function update() {
-                
-                rect(0,0,100,100,"blue");
-        
-            } </script>
+            function createrects() {
+                for (i = 0; i < 100; i++) {
+                    toprow.push({x: i*100 + 100,y: 0, w: 20, h: random(100, 250)})
+                    toprow.push({x: i*100 + 100,y: 500, w: 20, h: -random(100, 250)})
+                }
+            }
+
+
+            </script>
     </head>
     <body onload="start()">
         
