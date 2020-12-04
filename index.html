@@ -24,11 +24,15 @@
                 y += speedy;
                 
                 rect(x, y, 15, 15, "blue");
-                console.log(toprow);
                 toprow.forEach(function (value) {
                     value.x -= speed;
                     rect(value.x,value.y, value.w, value.h, "green");
-                    
+                    if(value.x < 500) {
+                        if(value.x < x && value.x + value.w > x && value.y < y && value.y + value.h > y) {
+                            location.reload(true);
+                            
+                        }
+                    }
                 });
 
             } 
@@ -37,8 +41,9 @@
 
             function createrects() {
                 for (i = 0; i < 100; i++) {
-                    toprow.push({x: i*100 + 100,y: 0, w: 20, h: random(100, 250)})
-                    toprow.push({x: i*100 + 100,y: 500, w: 20, h: -random(100, 250)})
+                    toprow.push({x: i*100 + 500,y: 0, w: 20, h: random(100, 250)});
+                    var ran = random(100, 250)
+                    toprow.push({x: i*100 + 500,y: 500 - ran , w: 20, h: ran});
                 }
             }
 
