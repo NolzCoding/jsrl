@@ -4,7 +4,9 @@ var canvas = document.createElement("canvas");
 
 var ctx = CanvasRenderingContext2D.prototype;
 
-var key = {space: false};
+var key = {space: false, w: false, d: false, s: false, a: false};
+
+
 
 function start() {
     canvas = document.createElement("canvas");
@@ -50,10 +52,34 @@ document.addEventListener('keydown', function(event) {
     if (event.keyCode == 32 ) {
         key.space = true;
     }
+    if(event.keyCode == 87) {
+        key.w = true;
+    }
+    if(event.keyCode == 68) {
+        key.d = true;
+    }
+    if(event.keyCode == 83) {
+        key.s = true;
+    }
+    if(event.keyCode == 65) {
+        key.a = false;
+    }
 });
 document.addEventListener('keyup', function(event) {
     if (event.keyCode == 32 ) {
         key.space = false;
+    }
+    if (event.keyCode == 87 ) {
+        key.w = false;
+    }
+    if(event.keyCode == 68) {
+        key.d = flase;
+    }
+    if(event.keyCode == 83) {
+        key.s = true;
+    }
+    if(event.keyCode == 65) {
+        key.a = true;
     }
 });
 
