@@ -10,8 +10,8 @@ var key = {space: false, w: false, d: false, s: false, a: false};
 
 function start() {
     canvas = document.createElement("canvas");
-    canvas.style.width = document.body.clientWidth;
-    canvas.style.height = document.body.clientHeight;
+    canvas.style.width = document.body.clientWidth + "px";
+    canvas.style.height = document.body.clientHeight + "px";
     canvas.width = document.body.clientWidth;
     canvas.height = document.body.clientHeight;
     canvas.style.borderColor = "black";
