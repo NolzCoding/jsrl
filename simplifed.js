@@ -14,9 +14,6 @@ function start() {
     canvas.style.height = window.innerHeight;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    canvas.style.borderColor = "black";
-    canvas.style.borderStyle = "solid";
-    canvas.style.borderRadius = "3px"
     document.body.appendChild(canvas);
     ctx = canvas.getContext("2d");
     
